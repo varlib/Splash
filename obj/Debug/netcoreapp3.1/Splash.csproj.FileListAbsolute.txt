@@ -16,3 +16,5 @@ E:\project\c-sharp\Splash\Splash\obj\Debug\netcoreapp3.1\Splash.csproj.CopyCompl
 E:\project\c-sharp\Splash\Splash\obj\Debug\netcoreapp3.1\Splash.dll
 E:\project\c-sharp\Splash\Splash\obj\Debug\netcoreapp3.1\Splash.pdb
 E:\project\c-sharp\Splash\Splash\obj\Debug\netcoreapp3.1\Splash.genruntimeconfig.cache
+E:\project\c-sharp\Splash\Splash\obj\Debug\netcoreapp3.1\Splash.MainForm.resources
+E:\project\c-sharp\Splash\Splash\obj\Debug\netcoreapp3.1\Splash.Properties.Resources.resources

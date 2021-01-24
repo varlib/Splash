@@ -29,10 +29,12 @@ namespace Splash
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.progBar = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // progBar
@@ -40,28 +42,28 @@ namespace Splash
             this.progBar.AnimationSpeed = 500;
             this.progBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
             this.progBar.Font = new System.Drawing.Font("Roboto", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.progBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.progBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(195)))), ((int)(((byte)(1)))));
             this.progBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
             this.progBar.InnerMargin = 2;
             this.progBar.InnerWidth = -1;
-            this.progBar.Location = new System.Drawing.Point(23, 57);
+            this.progBar.Location = new System.Drawing.Point(30, 104);
             this.progBar.MarqueeAnimationSpeed = 2000;
             this.progBar.Name = "progBar";
             this.progBar.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(26)))), ((int)(((byte)(43)))));
             this.progBar.OuterMargin = -25;
             this.progBar.OuterWidth = 26;
-            this.progBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(85)))), ((int)(((byte)(130)))));
+            this.progBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(195)))), ((int)(((byte)(1)))));
             this.progBar.ProgressWidth = 15;
             this.progBar.SecondaryFont = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.progBar.Size = new System.Drawing.Size(300, 300);
+            this.progBar.Size = new System.Drawing.Size(250, 250);
             this.progBar.StartAngle = 270;
             this.progBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progBar.SubscriptColor = System.Drawing.Color.White;
             this.progBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.progBar.SubscriptText = ".23";
-            this.progBar.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.progBar.SubscriptText = "";
+            this.progBar.SuperscriptColor = System.Drawing.Color.White;
             this.progBar.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.progBar.SuperscriptText = "°C";
+            this.progBar.SuperscriptText = "";
             this.progBar.TabIndex = 0;
             this.progBar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.progBar.Value = 68;
@@ -70,8 +72,8 @@ namespace Splash
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(2)))));
-            this.label1.Location = new System.Drawing.Point(33, 9);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(63, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 41);
             this.label1.TabIndex = 1;
@@ -80,20 +82,25 @@ namespace Splash
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(197)))), ((int)(((byte)(2)))));
-            this.label2.Location = new System.Drawing.Point(33, 384);
+            this.label2.Font = new System.Drawing.Font("Roboto Medium", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(94, 386);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 41);
+            this.label2.Size = new System.Drawing.Size(123, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Загрузка...";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(39)))), ((int)(((byte)(55)))));
-            this.ClientSize = new System.Drawing.Size(350, 450);
+            this.ClientSize = new System.Drawing.Size(317, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progBar);
@@ -103,6 +110,7 @@ namespace Splash
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,6 +121,7 @@ namespace Splash
         private CircularProgressBar.CircularProgressBar progBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
